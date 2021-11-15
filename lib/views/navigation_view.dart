@@ -8,6 +8,26 @@ class NavigationView extends StatefulWidget {
 }
 
 class _NavigationViewState extends State<NavigationView> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Business',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     String? _selectedItem = 'Edit Profile';
@@ -34,6 +54,27 @@ class _NavigationViewState extends State<NavigationView> {
           ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        elevation: 2.0,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.equalizer),
+            label: 'statics',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history_toggle_off),
+            label: 'staticsHistory',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
       body: Align(
         alignment: Alignment.center,
         child: Padding(
@@ -42,18 +83,8 @@ class _NavigationViewState extends State<NavigationView> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Enter your email'),
-                validator: (String? value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Password'),
+              Center(
+                child: _widgetOptions.elementAt(_selectedIndex),
               ),
               Center(
                 child: new ElevatedButton(
