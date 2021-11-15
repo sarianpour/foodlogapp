@@ -43,20 +43,14 @@ class WelcomeView extends StatelessWidget {
                 const SizedBox(height: 16),
                 new ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginView()),
-                    );
+                    Navigator.pushNamed(context, '/loginview');
                   },
                   child: const Text('    LOGIN   '),
                 ),
                 const SizedBox(height: 16),
                 new ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => RegisterView()),
-                    );
+                    Navigator.pushNamed(context, '/registerview');
                   },
                   child: const Text('REGISTER'),
                 ),

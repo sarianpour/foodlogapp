@@ -69,8 +69,11 @@ class _RegisterViewState extends State<RegisterView> {
               ),
               Center(
                 child: new ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('    LOGIN   '),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    Navigator.popAndPushNamed(context, '/navigationview');
+                  },
+                  child: const Text('    Register   '),
                 ),
               ),
             ],

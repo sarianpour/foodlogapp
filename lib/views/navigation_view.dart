@@ -1,16 +1,38 @@
 import 'package:flutter/material.dart';
 
-class LoginView extends StatefulWidget {
+class NavigationView extends StatefulWidget {
+  const NavigationView({Key? key}) : super(key: key);
+
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<NavigationView> createState() => _NavigationViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _NavigationViewState extends State<NavigationView> {
   @override
   Widget build(BuildContext context) {
+    String? _selectedItem = 'Edit Profile';
+    List _options = ['Edit Profile', 'Sign Out'];
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('FOOD LOG APP'),
+        actions: [
+          PopupMenuButton(
+            itemBuilder: (BuildContext bc) {
+              return _options
+                  .map((day) => PopupMenuItem(
+                        child: Text(day),
+                        value: day,
+                      ))
+                  .toList();
+            },
+            onSelected: (value) {
+              setState(() {
+                _selectedItem = value as String?;
+              });
+            },
+          ),
+        ],
       ),
       body: Align(
         alignment: Alignment.center,
