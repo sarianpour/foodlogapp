@@ -41,16 +41,20 @@ class _NavigationViewState extends State<NavigationView> {
           PopupMenuButton(
             itemBuilder: (BuildContext bc) {
               return _options
-                  .map((day) => PopupMenuItem(
-                        child: Text(day),
-                        value: day,
+                  .map((option) => PopupMenuItem(
+                        child: Text(option),
+                        value: option,
                       ))
                   .toList();
             },
             onSelected: (value) {
-              setState(() {
-                _selectedItem = value as String?;
-              });
+              if (value == _options[0]) {
+                Navigator.pushNamed(context, '/editprofileview');
+              }
+              if (value == _options[1]) {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/');
+              }
             },
           ),
         ],
