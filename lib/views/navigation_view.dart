@@ -119,7 +119,9 @@ class _NavigationViewState extends State<NavigationView> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(child: Text('$_selectedTabIndex')),
+                _selectedNavIndex == 1
+                    ? Center(child: Text('$_selectedTabIndex'))
+                    : Text('his'),
                 Center(
                   child: _widgetOptions.elementAt(_selectedNavIndex),
                 ),

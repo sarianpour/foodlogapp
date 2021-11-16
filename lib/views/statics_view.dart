@@ -5,6 +5,6 @@ class StaticsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('statics');
+    return Text('staticss');
   }
 }
