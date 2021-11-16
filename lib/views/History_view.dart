@@ -5,6 +5,24 @@ class HistoryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('this is history');
+    return Column(
+      children: [
+        Container(
+          height: 100,
+          color: Colors.amber[600],
+          child: Center(child: Text('Entry A')),
+        ),
+        Container(
+          height: 300,
+          color: Colors.amber[500],
+          child: const Center(child: Text('Entry B')),
+        ),
+        Container(
+          height: 300,
+          color: Colors.amber[100],
+          child: const Center(child: Text('Entry C')),
+        ),
+      ],
+    );
   }
 }

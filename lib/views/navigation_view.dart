@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_log_app/views/History_view.dart';
+import 'package:food_log_app/views/history_view.dart';
 import 'package:food_log_app/views/statics_view.dart';
 
 class NavigationView extends StatefulWidget {
@@ -115,17 +115,10 @@ class _NavigationViewState extends State<NavigationView> {
           alignment: Alignment.center,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _selectedNavIndex == 1
-                    ? Center(child: Text('$_selectedTabIndex'))
-                    : Text('his'),
-                Center(
-                  child: _widgetOptions.elementAt(_selectedNavIndex),
-                ),
-              ],
+            child: SingleChildScrollView(
+              child: _selectedNavIndex == 1
+                  ? Center(child: Text('$_selectedTabIndex'))
+                  : Center(child: HistoryView()),
             ),
           ),
         ),
