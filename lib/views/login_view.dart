@@ -17,11 +17,11 @@ class _LoginViewState extends State<LoginView> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextFormField(
-                decoration: InputDecoration(hintText: 'Enter your email'),
+                decoration: InputDecoration(labelText: 'Enter your email'),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter some text';
@@ -29,9 +29,15 @@ class _LoginViewState extends State<LoginView> {
                   return null;
                 },
               ),
+              SizedBox(
+                height: 16,
+              ),
               TextFormField(
                 obscureText: true,
-                decoration: InputDecoration(hintText: 'Password'),
+                decoration: InputDecoration(labelText: 'Password'),
+              ),
+              SizedBox(
+                height: 32,
               ),
               Center(
                 child: new ElevatedButton(

@@ -25,7 +25,9 @@ class _RegisterViewState extends State<RegisterView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextFormField(
-                decoration: InputDecoration(hintText: 'Enter your email'),
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter some text';
@@ -35,10 +37,12 @@ class _RegisterViewState extends State<RegisterView> {
               ),
               TextFormField(
                 obscureText: true,
-                decoration: InputDecoration(hintText: 'Password'),
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                ),
               ),
               TextFormField(
-                decoration: InputDecoration(hintText: 'Name'),
+                decoration: InputDecoration(labelText: 'Name'),
               ),
               DropdownButton<String>(
                 value: dropdownValue,
@@ -61,11 +65,11 @@ class _RegisterViewState extends State<RegisterView> {
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: 'Height'),
+                decoration: InputDecoration(labelText: 'Height'),
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: 'Wegith'),
+                decoration: InputDecoration(labelText: 'Wegith'),
               ),
               Center(
                 child: new ElevatedButton(
