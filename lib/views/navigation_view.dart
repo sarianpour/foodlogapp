@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:food_log_app/views/History_view.dart';
+import 'package:food_log_app/views/statics_view.dart';
 
 class NavigationView extends StatefulWidget {
   const NavigationView({Key? key}) : super(key: key);
@@ -13,14 +15,8 @@ class _NavigationViewState extends State<NavigationView> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      '1',
-      style: optionStyle,
-    ),
-    Text(
-      '2',
-      style: optionStyle,
-    ),
+    HistoryView(),
+    StaticsView()
   ];
 
   void _onItemTapped(int index) {
