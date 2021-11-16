@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class NavigationView extends StatefulWidget {
   const NavigationView({Key? key}) : super(key: key);
@@ -13,11 +14,11 @@ class _NavigationViewState extends State<NavigationView> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: Home',
+      '1',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      '2',
       style: optionStyle,
     ),
   ];
@@ -63,16 +64,16 @@ class _NavigationViewState extends State<NavigationView> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            icon: Icon(Icons.history_toggle_off),
+            label: 'History',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.equalizer),
             label: 'statics',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history_toggle_off),
-            label: 'staticsHistory',
-          ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
       ),
       body: Align(
@@ -85,15 +86,6 @@ class _NavigationViewState extends State<NavigationView> {
             children: [
               Center(
                 child: _widgetOptions.elementAt(_selectedIndex),
-              ),
-              Center(
-                child: new ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    Navigator.popAndPushNamed(context, '/navigationview');
-                  },
-                  child: const Text('    LOGIN   '),
-                ),
               ),
             ],
           ),
