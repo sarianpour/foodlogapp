@@ -16,21 +16,27 @@ class DailyFoodCard extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
+          SizedBox(
+            height: 16,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.asset(
                 'assets/$picAdress1',
+                fit: BoxFit.fill,
                 width: 100,
                 height: 100,
               ),
               Image.asset(
                 'assets/$picAdress2',
+                fit: BoxFit.fill,
                 width: 100,
                 height: 100,
               ),
               Image.asset(
                 'assets/$picAdress3',
+                fit: BoxFit.fill,
                 width: 100,
                 height: 100,
               ),
