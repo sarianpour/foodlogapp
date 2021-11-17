@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_log_app/views/history_view.dart';
-import 'package:food_log_app/views/statics_view.dart';
+import 'package:food_log_app/views/statics_view/statics_view.dart';
 
 class NavigationView extends StatefulWidget {
   const NavigationView({Key? key}) : super(key: key);
@@ -22,10 +22,10 @@ class _NavigationViewState extends State<NavigationView> {
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    HistoryView(),
-    StaticsView()
-  ];
+  // static const List<Widget> _widgetOptions = <Widget>[
+  //   HistoryView(),
+  //   StaticsView()
+  // ];
 
   void _onNavItemTapped(int index) {
     setState(() {
@@ -117,8 +117,8 @@ class _NavigationViewState extends State<NavigationView> {
             padding: const EdgeInsets.all(16.0),
             child: SingleChildScrollView(
               child: _selectedNavIndex == 1
-                  ? Center(child: Text('$_selectedTabIndex'))
-                  : Center(child: HistoryView()),
+                  ? StaticsView(_selectedTabIndex)
+                  : const Center(child: HistoryView()),
             ),
           ),
         ),
@@ -126,3 +126,4 @@ class _NavigationViewState extends State<NavigationView> {
     );
   }
 }
+//Center(child: StaticsView (_selectedTabIndex)Text('$'))
