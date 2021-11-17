@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_log_app/components/chart.dart';
+import 'package:food_log_app/components/pie_chart.dart';
+import 'package:food_log_app/components/stacked_chart.dart';
+import 'package:food_log_app/views/statics_view/statics_tab_daily.dart';
+import 'package:food_log_app/views/statics_view/statics_tab_monthly.dart';
+import 'package:food_log_app/views/statics_view/statics_tab_weekly.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 class StaticsView extends StatefulWidget {
@@ -11,6 +15,11 @@ class StaticsView extends StatefulWidget {
 }
 
 class _StaticsViewState extends State<StaticsView> {
+  List<Widget> tabs = [
+    StaticsTabDaily(),
+    StaticsTabWeekly(),
+    StaticsTabMonthly()
+  ];
   @override
   Widget build(BuildContext context) {
     Map<String, double> dataMap = {
@@ -21,31 +30,17 @@ class _StaticsViewState extends State<StaticsView> {
     };
     return Card(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(
             height: 16,
           ),
           Text('${widget.selectedTabIndex}'),
-          Container(
-            width: 300,
-            height: 300,
-            child: PieChart(dataMap: {
-              "Protein": 2,
-              "Fat": 3,
-              "Varb": 4,
-            }),
-          ),
+          tabs[widget.selectedTabIndex],
           Container(
             width: 300,
             height: 300,
             child: StackedChart(),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[],
-            ),
           ),
         ],
       ),
