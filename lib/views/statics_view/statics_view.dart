@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_log_app/components/pie_chart.dart';
-import 'package:food_log_app/components/stacked_chart.dart';
+import 'package:food_log_app/components/stacked_chart_daily.dart';
 import 'package:food_log_app/views/statics_view/statics_tab_daily.dart';
 import 'package:food_log_app/views/statics_view/statics_tab_monthly.dart';
 import 'package:food_log_app/views/statics_view/statics_tab_weekly.dart';
@@ -37,11 +37,6 @@ class _StaticsViewState extends State<StaticsView> {
           ),
           Text('${widget.selectedTabIndex}'),
           tabs[widget.selectedTabIndex],
-          Container(
-            width: 300,
-            height: 300,
-            child: StackedChart(),
-          ),
         ],
       ),
     );
