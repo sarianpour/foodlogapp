@@ -65,11 +65,13 @@ class _RegisterViewState extends State<RegisterView> {
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Height'),
+                decoration:
+                    InputDecoration(labelText: 'Height', suffixText: 'cm'),
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Wegith'),
+                decoration:
+                    InputDecoration(labelText: 'Wegith', suffixText: 'kg'),
               ),
               Center(
                 child: new ElevatedButton(

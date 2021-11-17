@@ -10,7 +10,7 @@ class EditProfileView extends StatefulWidget {
 class _EditProfileViewState extends State<EditProfileView> {
   @override
   Widget build(BuildContext context) {
-    String dropdownValue = 'Gender';
+    String dropdownValue = 'Male';
 
     return Scaffold(
       appBar: AppBar(
@@ -24,10 +24,19 @@ class _EditProfileViewState extends State<EditProfileView> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
+              Center(
+                  child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.asset(
+                  'assets/pp.jpg',
+                  fit: BoxFit.fill,
+                  width: 100,
+                  height: 100,
                 ),
+              )),
+              TextFormField(
+                initialValue: 'saman.arianpour@gmail.com',
+                decoration: InputDecoration(labelText: 'Email'),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter some text';
@@ -37,11 +46,13 @@ class _EditProfileViewState extends State<EditProfileView> {
               ),
               TextFormField(
                 obscureText: true,
+                initialValue: '*******',
                 decoration: InputDecoration(
                   labelText: 'Password',
                 ),
               ),
               TextFormField(
+                initialValue: 'Saman',
                 decoration: InputDecoration(labelText: 'Name'),
               ),
               DropdownButton<String>(
@@ -64,12 +75,16 @@ class _EditProfileViewState extends State<EditProfileView> {
                 }).toList(),
               ),
               TextFormField(
+                initialValue: '174',
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Height'),
+                decoration:
+                    InputDecoration(labelText: 'Height', suffixText: 'cm'),
               ),
               TextFormField(
+                initialValue: '71',
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Wegith'),
+                decoration:
+                    InputDecoration(labelText: 'Wegith', suffixText: 'kg'),
               ),
               Center(
                 child: new ElevatedButton(

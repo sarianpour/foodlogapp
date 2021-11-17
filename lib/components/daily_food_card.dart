@@ -22,23 +22,32 @@ class DailyFoodCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset(
-                'assets/$picAdress1',
-                fit: BoxFit.fill,
-                width: 100,
-                height: 100,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.asset(
+                  'assets/$picAdress1',
+                  fit: BoxFit.fill,
+                  width: 100,
+                  height: 100,
+                ),
               ),
-              Image.asset(
-                'assets/$picAdress2',
-                fit: BoxFit.fill,
-                width: 100,
-                height: 100,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.asset(
+                  'assets/$picAdress2',
+                  fit: BoxFit.fill,
+                  width: 100,
+                  height: 100,
+                ),
               ),
-              Image.asset(
-                'assets/$picAdress3',
-                fit: BoxFit.fill,
-                width: 100,
-                height: 100,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.asset(
+                  'assets/$picAdress3',
+                  fit: BoxFit.fill,
+                  width: 100,
+                  height: 100,
+                ),
               ),
             ],
           ),
