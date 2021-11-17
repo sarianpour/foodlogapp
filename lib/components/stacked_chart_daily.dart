@@ -60,9 +60,9 @@ class _StackedChartDaily extends State<StackedChartDaily> {
 
   List<ExpenseData> getChartData() {
     final List<ExpenseData> chartData = [
-      ExpenseData('BreakFast', 55, 40, 45),
-      ExpenseData('Lunch', 33, 45, 54),
-      ExpenseData('Dinner', 43, 23, 20),
+      ExpenseData('BreakFast', 60, 70, 100),
+      ExpenseData('Lunch', 120, 600, 300),
+      ExpenseData('Dinner', 100, 350, 300),
     ];
     return chartData;
   }
