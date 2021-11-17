@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_log_app/components/pie_chart.dart';
+import 'package:food_log_app/components/stacked_chart_weekly.dart';
 
 class StaticsTabWeekly extends StatefulWidget {
   const StaticsTabWeekly({Key? key}) : super(key: key);
@@ -14,7 +15,8 @@ class _StaticsTabWeeklyState extends State<StaticsTabWeekly> {
     return Column(
       children: [
         Container(
-          child: Text('real week'),
+          height: 300,
+          child: StackedChartWeekly(),
         ),
         MyPieChart(4, 4, 3),
       ],

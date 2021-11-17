@@ -15,7 +15,6 @@ class _StaticsTabDailyState extends State<StaticsTabDaily> {
     return Column(
       children: [
         Container(
-          width: 300,
           height: 300,
           child: StackedChartDaily(),
         ),
