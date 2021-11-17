@@ -60,13 +60,13 @@ class _StackedChartWeekly extends State<StackedChartWeekly> {
 
   List<ExpenseData> getChartData() {
     final List<ExpenseData> chartData = [
-      ExpenseData('S', 260, 320, 360),
-      ExpenseData('M', 270, 400, 350),
-      ExpenseData('T', 200, 360, 300),
-      ExpenseData('W', 150, 350, 320),
-      ExpenseData('T', 180, 300, 400),
-      ExpenseData('F', 300, 350, 430),
-      ExpenseData('S', 260, 380, 350),
+      ExpenseData('Su', 1460, 2120, 2160),
+      ExpenseData('Mo', 1470, 1200, 2150),
+      ExpenseData('Tu', 1400, 2160, 2100),
+      ExpenseData('We', 750, 2150, 2120),
+      ExpenseData('Th', 780, 2100, 2800),
+      ExpenseData('Fr', 2100, 2150, 2830),
+      ExpenseData('Sa', 2460, 2180, 2150),
     ];
     return chartData;
   }
