@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:food_log_app/views/history_view.dart';
 import 'package:food_log_app/views/statics_view/statics_view.dart';
+import 'package:image_picker/image_picker.dart';
+
+enum ImageSourceType { gallery, camera }
+final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 class NavigationView extends StatefulWidget {
   const NavigationView({Key? key}) : super(key: key);
@@ -65,6 +70,7 @@ class _NavigationViewState extends State<NavigationView> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        key: _scaffoldKey,
         appBar: AppBar(
           bottom: _selectedNavIndex == 1 ? tabBar : null,
           title: Text('FOOD LOG APP'),
@@ -92,7 +98,36 @@ class _NavigationViewState extends State<NavigationView> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () => showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+              title: const Text('Size Calibration'),
+              content: const Text(
+                  'Have your thumb next to the food plate for size calibration.'),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () async {
+                    final ImagePicker _picker = ImagePicker();
+                    final XFile? photo =
+                        await _picker.pickImage(source: ImageSource.gallery);
+                    Navigator.pop(context, 'Gallery');
+                    Navigator.pushNamed(context, '/image-detection');
+                  },
+                  child: const Text('Gallery'),
+                ),
+                TextButton(
+                  onPressed: () async {
+                    final ImagePicker _picker = ImagePicker();
+                    final XFile? photo =
+                        await _picker.pickImage(source: ImageSource.camera);
+                    Navigator.pop(context, 'Camera');
+                    Navigator.pushNamed(context, '/image-detection');
+                  },
+                  child: const Text('Camera'),
+                ),
+              ],
+            ),
+          ),
           child: Icon(Icons.add),
           elevation: 2.0,
         ),

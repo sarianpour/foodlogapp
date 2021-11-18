@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_log_app/views/edit_profile_view.dart';
+import 'package:food_log_app/views/image_detection_view.dart';
 import 'package:food_log_app/views/login_view.dart';
 import 'package:food_log_app/views/navigation_view.dart';
 import 'package:food_log_app/views/register_view.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         '/loginview': (BuildContext context) => new LoginView(),
         '/registerview': (BuildContext context) => new RegisterView(),
         '/navigationview': (BuildContext context) => new NavigationView(),
-        '/editprofileview': (BuildContext context) => new EditProfileView()
+        '/editprofileview': (BuildContext context) => new EditProfileView(),
+        '/image-detection': (BuildContext context) => new ImageDetectionView()
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,

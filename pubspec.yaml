@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   pie_chart: ^5.1.0
   syncfusion_flutter_charts: ^19.3.54
+  image_picker: ^0.8.4+4
 
 dev_dependencies:
   flutter_test:
