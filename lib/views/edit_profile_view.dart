@@ -13,6 +13,7 @@ class _EditProfileViewState extends State<EditProfileView> {
     String dropdownValue = 'Male';
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('Edit Profile'),
       ),
