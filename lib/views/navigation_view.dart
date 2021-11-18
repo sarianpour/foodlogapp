@@ -6,7 +6,6 @@ import 'package:food_log_app/views/statics_view/statics_view.dart';
 import 'package:image_picker/image_picker.dart';
 
 enum ImageSourceType { gallery, camera }
-final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 class NavigationView extends StatefulWidget {
   const NavigationView({Key? key}) : super(key: key);
@@ -70,7 +69,6 @@ class _NavigationViewState extends State<NavigationView> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        key: _scaffoldKey,
         appBar: AppBar(
           bottom: _selectedNavIndex == 1 ? tabBar : null,
           title: Text('FOOD LOG APP'),

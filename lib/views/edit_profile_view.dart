@@ -90,7 +90,6 @@ class _EditProfileViewState extends State<EditProfileView> {
                 child: new ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pop();
-                    Navigator.popAndPushNamed(context, '/navigationview');
                   },
                   child: const Text(' SAVE '),
                 ),
