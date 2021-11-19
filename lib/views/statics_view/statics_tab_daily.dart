@@ -18,7 +18,7 @@ class _StaticsTabDailyState extends State<StaticsTabDaily> {
           height: 300,
           child: StackedChartDaily(),
         ),
-        MyPieChart(5, 2, 1),
+        MyPieChart(2, 1, 4),
       ],
     );
   }

@@ -29,8 +29,8 @@ class MyPieChart extends StatelessWidget {
       child: PieChart(
         dataMap: {
           "Protein": protein,
-          "Fat": carb,
-          "Carb": fat,
+          "Fat": fat,
+          "Carb": carb,
         },
         chartType: ChartType.ring,
         ringStrokeWidth: 32,
