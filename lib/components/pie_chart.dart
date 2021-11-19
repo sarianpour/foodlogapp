@@ -11,12 +11,12 @@ class MyPieChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final gradientList = <List<Color>>[
       [
-        Colors.yellow,
-        Colors.yellow,
+        Colors.red,
+        Colors.red,
       ],
       [
-        Colors.red,
-        Colors.red,
+        Colors.yellow,
+        Colors.yellow,
       ],
       [
         Colors.brown,
