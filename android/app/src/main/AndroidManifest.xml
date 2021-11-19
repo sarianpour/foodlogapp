@@ -2,7 +2,8 @@
     package="com.example.food_log_app">
    <application
         android:label="food_log_app"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -30,7 +31,10 @@
             android:value="2" />
     </application>
     <uses-permission android:name="android.permission.CAMERA" />
+  
     <uses-feature      android:name="android.hardware.camera"      android:required="false" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
     
 
 </manifest>
