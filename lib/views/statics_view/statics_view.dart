@@ -22,12 +22,6 @@ class _StaticsViewState extends State<StaticsView> {
   ];
   @override
   Widget build(BuildContext context) {
-    Map<String, double> dataMap = {
-      "Flutter": 5,
-      "React": 3,
-      "Xamarin": 2,
-      "Ionic": 2,
-    };
     return Card(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -35,7 +29,6 @@ class _StaticsViewState extends State<StaticsView> {
           SizedBox(
             height: 16,
           ),
-          Text('${widget.selectedTabIndex}'),
           tabs[widget.selectedTabIndex],
         ],
       ),
