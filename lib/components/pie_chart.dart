@@ -15,12 +15,12 @@ class MyPieChart extends StatelessWidget {
         Colors.yellow,
       ],
       [
-        Colors.brown,
-        Colors.brown,
+        Colors.red,
+        Colors.red,
       ],
       [
-        Colors.red,
-        Colors.red,
+        Colors.brown,
+        Colors.brown,
       ]
     ];
     return Container(
